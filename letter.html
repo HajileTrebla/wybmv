@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Letter For You 💐</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-pink-200 via-rose-200 to-red-200 flex items-center justify-center p-6">
+
+<div 
+    x-data="{ showLetter: false }"
+    class="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8 max-w-2xl w-full text-center"
+>
+
+    <!-- Title -->
+    <h1 class="text-3xl font-bold text-rose-600 mb-6">
+        For You 💐
+    </h1>
+
+    <!-- Bouquet Image -->
+    <img
+        src="images/roses.jpg"
+        alt="Bouquet of roses"
+        class="w-full max-h-80 object-cover rounded-xl shadow-lg mb-6"
+    />
+
+    <!-- Reveal Button -->
+    <button
+        x-show="!showLetter"
+        x-transition
+        @click="showLetter = true"
+        class="px-6 py-3 rounded-full bg-rose-500 text-white font-semibold hover:bg-rose-600 transition"
+    >
+        Read My Letter 💌
+    </button>
+
+    <!-- Letter -->
+    <div
+        x-cloak
+        x-show="showLetter"
+        x-transition.opacity.duration.700ms
+        class="mt-6 text-left space-y-4 text-gray-700 leading-relaxed"
+    >
+        <p>
+            Dear Ace,
+        </p>
+
+        <p>
+            I originally wanted to give this to you along with the delivered flowers,
+            but di nga mabait satin mundo. I wanted it to be special. So I decided to place it here instead.
+            I wanted to send this specific bouquet sana.
+        </p>
+
+        <p>
+            Happy Valentine's Day Ace, Ever since the day we reconnected last year up to today, You had made each day brighter.
+            You have given me so much this past year and I cherish each and every memory.
+            So here is a little reminder of how much I love you.
+        </p>
+
+        <p>
+            I hope you like this as much as you would have if I could have real flowers delivered to you.
+            I wish I could be there to give you a real bouquet and a real hug, but for now, this will have to do.
+        </p>
+
+        <p>
+            I love you so much Ace
+        </p>
+
+        <p class="font-semibold text-rose-600">
+            With all my heart, 
+            Yours 💖
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
